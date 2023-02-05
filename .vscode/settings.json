@@ -1,0 +1,22 @@
+{
+  "files.associations": {
+    "*.html": "html",
+    "iosfwd": "cpp",
+    "iostream": "cpp",
+    "xlocale": "cpp",
+    "istream": "cpp",
+    "stdexcept": "cpp",
+    "xstring": "cpp",
+    "ostream": "cpp",
+    "ios": "cpp",
+    "iomanip": "cpp",
+    "string": "cpp",
+    "fstream": "cpp",
+    "system_error": "cpp",
+    "type_traits": "cpp",
+    "vector": "cpp",
+    "xutility": "cpp",
+    "xmemory": "cpp"
+  },
+  "cSpell.enabled": true
+}

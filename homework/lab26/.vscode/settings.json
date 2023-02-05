@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.html": "html",
+    "cmath": "cpp",
+    "ios": "cpp",
+    "xiosbase": "cpp",
+    "utility": "cpp",
+    "iostream": "cpp"
+  }
+}

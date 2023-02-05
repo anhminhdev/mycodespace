@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.html": "html",
+    "utility": "cpp",
+    "ostream": "cpp",
+    "string": "cpp",
+    "iostream": "cpp"
+  },
+  "git.ignoreLimitWarning": true
+}
