@@ -14,6 +14,7 @@ int countSpecialWords(string str)
     int length = str.length();
 
     int k = 1;
+    // Check first word
     if (!isspace(str[0]) && !isdigit(str[0]))
     {
         count++;
@@ -26,6 +27,7 @@ int countSpecialWords(string str)
             }
         }
     }
+
     for (int i = k; i < length; i++)
     {
         if (!isspace(str[i]) && !isdigit(str[i]) && str[i - 1] == ' ')

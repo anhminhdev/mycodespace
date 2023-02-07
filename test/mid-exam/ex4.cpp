@@ -28,7 +28,7 @@ void printArray(int a[], int n)
     }
     cout << endl;
 }
-
+// đảo các phần tử chẵn trong mảng
 void reverseArray(int a[], int start, int end)
 {
     for (; start < end; start++)
@@ -41,7 +41,7 @@ void reverseArray(int a[], int start, int end)
                 {
                     swap(a[start], a[end]);
                     end--;
-                    break;
+                    break; // thoát khỏi vòng lặp while
                 }
                 else
                     end--;

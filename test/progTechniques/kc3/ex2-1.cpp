@@ -105,20 +105,21 @@ void deleteNodeTailList(list &l)
     else if (l.head->next == NULL)
     {
         deleteNodeHeadList(l);
-        return;
     }
     else
     {
-        node *del = l.tail;
+        node *prev;
         for (node *i = l.head; i != NULL; i = i->next)
         {
-            if (i->next == l.tail)
+            // if node i as last node
+            if (i == l.tail)
             {
-                delete l.tail;
-                i->next = NULL;
-                l.tail = i;
+                l.tail = prev;
+                l.tail->next = NULL;
+                delete i;
                 return;
             }
+            prev = i;
         }
     }
 }
@@ -163,8 +164,10 @@ void deleteOddElement(list &l)
 
 void releaseListMemory(list &l)
 {
-    for (node *i = l.head; i != NULL; i = i->next)
+    node *i;
+    while (l.head != NULL)
     {
+        i = l.head;
         l.head = l.head->next;
         delete i;
     }
@@ -177,8 +180,8 @@ int main()
     inputNode(l);
     outputNode(l);
 
-    deleteOddElement(l);
-    outputNode(l);
     releaseListMemory(l);
+    outputNode(l);
+
     return 0;
 }

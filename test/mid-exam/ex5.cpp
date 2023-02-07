@@ -49,6 +49,7 @@ void add_number_0_behind_primeNumber(int a[], int &n, int b[], int &nb)
         if (isPrime(a[i]))
         {
             insertOneElement(a, n, i + 1);
+            // array b is contain index position inserted
             b[nb++] = i + 1;
         }
     }
