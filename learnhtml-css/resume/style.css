@@ -1,0 +1,16 @@
+.profile-intro {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 30px;
+}
+
+.profile-intro h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.profile-intro strong {
+  font-weight: bold;
+  color: red;
+}
