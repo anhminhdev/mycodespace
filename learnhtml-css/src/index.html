@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Learn HTML-CSS</title>
+    <style>
+        .box {
+            width: 50%;
+            height: 100px;
+            background: rgb(190, 234, 123);
+        }
+
+        .box::after {
+            content: "HI GUYS";
+        }
+
+        a::after {
+            content: "(" attr(href)")";
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <a href="http://fullstack.edu.vn/" target="_blank">Go to fullstack.edu.vn</a>
+    <h1>CSS Functions</h1>
+    <ol>
+        <li>var()</li>
+        <li>linear-gradient()</li>
+        <li>rgba()</li>
+        <li>rgb</li>
+        <li>calc()</li>
+        <li>attr()</li>
+    </ol>
+</body>
+
+</html>
