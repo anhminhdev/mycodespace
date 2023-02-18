@@ -1,70 +1,86 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
+int n, a[100], b[100], k;
 
-struct node
+void inputArray()
 {
-  int data;
-  node *next;
-  node *pre;
-};
-
-struct douList
-{
-  node *head;
-  node *tail;
-};
-
-douList *initList(int x)
-{
-  douList *l = new douList;
-  l->head = new node;
-  l->head->data = x;
-  l->head->pre = NULL;
-  l->head->next = NULL;
-  l->tail = l->head;
-  return l;
-}
-
-douList *addHead(douList *l, int x)
-{
-  node *temp = new node;
-  temp->data = x;
-  temp->pre = NULL;
-  temp->next = l->head;
-  l->head->pre = temp;
-  l->head = temp;
-  return l;
-}
-
-douList *addTail(douList *l, int x)
-{
-  node *temp = new node;
-  temp->data = x;
-  temp->next = NULL;
-  temp->pre = l->tail;
-  l->tail->next = temp;
-  l->tail = temp;
-  return l;
-}
-
-void printList(douList *l)
-{
-  for (node *i = l->head; i != NULL; i = i->next)
+  cin >> n;
+  for (int i = 0; i < n; i++)
   {
-    cout << i->data << " ";
+    cin >> a[i];
+  }
+}
+
+void quickSort(int a[], int l, int r)
+{
+  int p = a[(l + r) / 2]; // pivot element at mid array
+  int i = l, j = r;
+  while (i < j)
+  {
+    while (a[i] < p)
+    {
+      i++;
+    }
+    while (a[j] > p)
+    {
+      j--;
+    }
+    if (i <= j)
+    {
+      int temp = a[i];
+      a[i] = a[j];
+      a[j] = temp;
+      i++;
+      j--;
+    }
+  }
+  if (i < r)
+  {
+    quickSort(a, i, r);
+  }
+  if (l < j)
+  {
+    quickSort(a, l, j);
+  }
+}
+
+void printArray()
+{
+  for (int i = 0; i < n; i++)
+  {
+    cout << a[i] << ' ';
   }
 }
 
 int main()
 {
-  int n;
-  cin >> n;
-  douList *l = initList(1);
-  for (int i = 2; i <= n; i++)
+  inputArray();
+  // get non-zero element in array a
+  k = 0;
+  for (int i = 0; i < n; i++)
   {
-    l = addHead(l, i);
-    l = addTail(l, i);
+    if (a[i] != 0)
+    {
+      b[k++] = a[i];
+    }
   }
-  printList(l);
+  quickSort(b, 0, k - 1);
+  k = 0;
+  for (int i = n - 1; i >= 0; i--)
+  {
+    if (a[i] < 0)
+    {
+      a[i] = b[k++];
+    }
+  }
+  for (int i = 0; i < n; i++)
+  {
+    if (a[i] > 0)
+    {
+      a[i] = b[k++];
+    }
+  }
+  printArray();
   return 0;
 }
