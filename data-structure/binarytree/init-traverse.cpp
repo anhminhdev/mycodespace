@@ -29,6 +29,7 @@ node *insert(node *t, int x)
       t->right = insert(t->right, x);
     }
   }
+  return t;
 }
 
 void printTree(node *t)
@@ -41,6 +42,22 @@ void printTree(node *t)
   }
 }
 
+int treeLevel(node *t)
+{
+  if (t == NULL)
+    return -1;
+  return 1 + max(treeLevel(t->left), treeLevel(t->right));
+}
+
+bool checkAVL(node *t)
+{
+  if (t == NULL)
+    return true;
+  if (abs(treeLevel(t->left) - treeLevel(t->right)) > 1)
+    return false;
+  return checkAVL(t->left) && checkAVL(t->right);
+}
+
 int main()
 {
   int n, x;
@@ -51,6 +68,6 @@ int main()
     cin >> x;
     t = insert(t, x);
   }
-  printTree(t);
+  cout << std::boolalpha << checkAVL(t);
   return 0;
 }
