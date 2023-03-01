@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEM</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div>
+    <div id="toast">
+      <!-- Success -->
+      <div class="toast toast--success">
+        <div class="toast__icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="toast__body">
+          <h3 class="toast__title">Success</h3>
+          <p class="toast__msg">Nguyen Viet Anh Minh, Nguyen Viet Anh Minh jquery react javascript</p>
+        </div>
+        <div class="toast__close">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="btn btn--success">Show success toast</div>
+      <div class="btn btn--danger">Show error toast</div>
+    </div>
+
+    <script>
+      // Toast function
+      function toast({
+        title = '',
+        message = '',
+        type = 'info',
+        duration = 3000
+      }) {
+        const main = document.getElementById('toast', `toast--${type}`);
+        if (main) {
+          const toast = document.createElement('div');
+          const icons = {
+            success: `fa - circle - check`,
+            info: `fas fa-info-circle`,
+            warning: `fa-regular fa-circle-exclamation`,
+            error: `fa-regular fa-circle-exclamation`,
+          }
+          const icon = icons[type];
+
+          toast.classList.add(toast);
+          toast.innerHTML = `
+            <div class="toast__icon">
+              <i class="${icon}"></i>
+            </div>
+            <div class="toast__body">
+              <h3 class="toast__title">${title}</h3>
+              <p class="toast__msg">${message}</p>
+            </div>
+            <div class="toast__close">
+                <i class="fas fa-times"></i>
+            </div>`;
+          main.appendChild(toast);
+        }
+      }
+
+      toast({
+        title: 'Success 1234567',
+        message: 'Nguyen Viet Anh Minh, Nguyen Viet Anh Minh jquery react javascript',
+        type: 'warning',
+        duration: 3000
+      });
+    </script>
+</body>
+
+</html>
