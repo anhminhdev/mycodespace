@@ -13,10 +13,10 @@ public:
     double ketQuaPhanSo();
     int UCLN(int, int);
     void rutGonPhanSo();
-    // PhanSo tinhTong(PhanSo);
-    // PhanSo tinhHieu(PhanSo);
-    // PhanSo tinhTich(PhanSo);
-    // PhanSo tinhThuong(PhanSo);
+    PhanSo tinhTong(PhanSo);
+    PhanSo tinhHieu(PhanSo);
+    PhanSo tinhTich(PhanSo);
+    PhanSo tinhThuong(PhanSo);
 
     // 1 số nguyên cộng với 1 phân số
     friend PhanSo operator+(int, PhanSo);
@@ -26,5 +26,5 @@ public:
     // cài đặt toán tử xuất cho phân số
     friend ostream &operator<<(ostream &, PhanSo);
     // cài toán tử =
-    PhanSo &PhanSo::operator=(const PhanSo);    
+    PhanSo &PhanSo::operator=(const PhanSo);
 };

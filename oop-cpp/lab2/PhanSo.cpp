@@ -56,45 +56,45 @@ void PhanSo::rutGonPhanSo()
     mau /= GCD;
 }
 
-// PhanSo PhanSo::tinhTong(PhanSo ps2)
-// {
-//     PhanSo tong;
-//     tong.tu = (this->tu * ps2.mau + ps2.tu * this->mau);
-//     tong.mau = this->mau * ps2.mau;
-//     return tong;
-// }
+PhanSo PhanSo::tinhTong(PhanSo ps2)
+{
+    PhanSo tong;
+    tong.tu = (this->tu * ps2.mau + ps2.tu * this->mau);
+    tong.mau = this->mau * ps2.mau;
+    return tong;
+}
 
-// PhanSo PhanSo::tinhHieu(PhanSo ps2)
-// {
-//     PhanSo hieu;
-//     hieu.tu = (this->tu * ps2.mau - ps2.tu * this->mau);
-//     hieu.mau = this->mau * ps2.mau;
-//     return hieu;
-// }
+PhanSo PhanSo::tinhHieu(PhanSo ps2)
+{
+    PhanSo hieu;
+    hieu.tu = (this->tu * ps2.mau - ps2.tu * this->mau);
+    hieu.mau = this->mau * ps2.mau;
+    return hieu;
+}
 
-// PhanSo PhanSo::tinhTich(PhanSo ps2)
-// {
-//     PhanSo tich;
-//     tich.tu = this->tu * ps2.tu;
-//     tich.mau = this->mau * ps2.mau;
-//     return tich;
-// }
+PhanSo PhanSo::tinhTich(PhanSo ps2)
+{
+    PhanSo tich;
+    tich.tu = this->tu * ps2.tu;
+    tich.mau = this->mau * ps2.mau;
+    return tich;
+}
 
-// PhanSo PhanSo::tinhThuong(PhanSo ps2)
-// {
-//     PhanSo thuong;
-//     thuong.tu = this->tu * ps2.mau;
-//     thuong.mau = this->mau * ps2.tu;
-//     return thuong;
-// }
+PhanSo PhanSo::tinhThuong(PhanSo ps2)
+{
+    PhanSo thuong;
+    thuong.tu = this->tu * ps2.mau;
+    thuong.mau = this->mau * ps2.tu;
+    return thuong;
+}
 
-// PhanSo operator+(int n, PhanSo ps)
-// {
-//     PhanSo Tong;
-//     Tong.tu = n * ps.mau + ps.tu;
-//     Tong.mau = ps.mau;
-//     return Tong;
-// }
+PhanSo operator+(int n, PhanSo ps)
+{
+    PhanSo Tong;
+    Tong.tu = n * ps.mau + ps.tu;
+    Tong.mau = ps.mau;
+    return Tong;
+}
 
 // cài đặt toán tử nhập cho phân số
 istream &operator>>(istream &is, PhanSo &ps)
